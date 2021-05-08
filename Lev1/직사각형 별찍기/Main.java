@@ -6,6 +6,13 @@ public class Main {
         int a = sc.nextInt();
         int b = sc.nextInt();
 
-        System.out.println(a + b);
+        
+        for(int i=0; i<b; i++) {
+        	for(int j=0; j<a; j++) {
+        		System.out.printf("*");
+        	}
+        	System.out.println();
+        }
+
     }
 }
