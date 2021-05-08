@@ -1,7 +1,6 @@
 class Solution {
     public int solution(long num) {
         int answer = 0;
-        int cnt =0;
         
         while(num!=1) {
         	if(num%2==0) {
@@ -11,20 +10,14 @@ class Solution {
         		num+=1;
         	}
         	
-        	cnt++; 
+        	answer++; 
         	
-        	if(cnt==500) {
-        		answer = -1;
-                return answer;
+        	if(answer==500) {
+
+                return  -1;
         	}
         	
         }
-        
-        answer=cnt;
-    		
-
-        
-        
         return answer;
     }
 }
