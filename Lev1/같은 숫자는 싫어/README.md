@@ -2,7 +2,6 @@
 단, 제거된 후 남은 수들을 반환할 때는 배열 arr의 원소들의 순서를 유지.
 
 1. 배열 => ArrayList
-2. 
-ArrayList.get(index)를 사용해서 값을 비교하고
+2. ArrayList.get(index)를 사용해서 값을 비교하고
 ArrayList.remove(index)를 사용해 중복값을 제거한다.
 3. ArrayList => 배열
