@@ -37,7 +37,7 @@ function solution(lottos, win_nums) {
 	var min=0;
 
 	
-		if(nums+cnt==0 || nums+cnt==1){
+	if(nums+cnt==0 || nums+cnt==1){
 		max=6;
 	}else {
 		max=7-nums-cnt;
