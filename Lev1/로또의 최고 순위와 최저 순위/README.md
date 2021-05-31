@@ -12,5 +12,6 @@
   4. lottos2와 win_nums와 비교해 중복된 수가 몇개인지 세기(nums) <br>
   5. 최고 개수: nums+cnt <br>
      최저 개수: nums<br>
+  => 개수가 6이면 1, 5면 2, .... 
   
 </p>
