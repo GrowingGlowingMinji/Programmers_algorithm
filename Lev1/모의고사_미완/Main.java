@@ -8,10 +8,18 @@ class Solution {
         int pass1=0;
         int pass2=0;
         int pass3=0;
+        
+        int left=answers.length;
+        int check = 0;
        
+        int[] answer = null;
         
         //수포자 3명 답 알고리즘 && 점수 비교
         for(int i=0;i<answers.length;i++) {
+        	
+        	left--;
+        	
+        	
         	//수포자1
         	if(i%5==0) {
         		if(answers[i]==1) {
@@ -85,64 +93,52 @@ class Solution {
         		} 
         	}
         	
-        
         	
-        }
-        int[] answer = null;
-       
-        //return 값 하나일 때
-       
-        if(pass1!=pass2 &&pass1!=pass3&&pass2!=pass3) {
-
-        	 answer= new int[1];
-        	 answer[0]=1;
-        	if(pass1<pass2) {
-        		answer[0]=2;
-        	}else if(pass2<pass3) {
-        		answer[0]=3;
+        	if(pass1 > pass2+left && pass1>pass3+left) {
+        		answer= new int[1];
+				answer[0] = 1;
+        		check++;
         	}
-        	
+    		
+    		if(pass2 > pass1+left && pass2>pass3+left) {
+    			answer= new int[1];
+				answer[0] = 2;
+        		check++;
+        	}
+    		
+    		if(pass3 > pass1+left && pass3>pass2+left) {
+    			answer= new int[1];
+				answer[0] = 3;
+        		check++;
+        	}
+    		
+    		if(check!=0) { 
+    			return answer;    			
+    		}
+        }
         
-        }else if(pass1==pass2 &&pass1==pass3&&pass2==pass3) {//return값 3개
+        
+        //공동 1등일 경우
+        if(pass1==pass2 && pass1 == pass3) {
         	answer= new int[3];
-        	answer[0]= 1;
-        	answer[1]=2;
-        	answer[2]=3;
-       
-        }else if(pass1==pass2 &&pass1!=pass3) {
-        	if(pass1<pass3) {
-        		answer= new int[1];
-        		answer[0]= 3;
-        		
-        	}else {
-        		answer= new int[2];
-        		answer[0] =1;
-        		answer[1]=2;
-        	}
-        }else if(pass1==pass3 &&pass1!=pass2) {
-        	if(pass1<pass2) {
-        		answer= new int[1];
-        		answer[0]=2;
-        		
-        	}else {
-        		answer= new int[2];
-        		answer[0] =1;
-        		answer[1]=3;
-        	}
-        }else if(pass2==pass3 &&pass2!=pass1) {
-        	if(pass2<pass1) {
-        		answer= new int[1];
-        		answer[0]=1;
-        		
-        	}else {
-        		answer= new int[2];
-        		answer[0] =2;
-        		answer[1]=3;
-        	}
+        	answer[0] = 1;
+			answer[1] = 2;
+			answer[2] = 3;
+        }else if(pass1==pass2) {
+        	answer= new int[2];
+        	answer[0] = 1;
+			answer[1] = 2;
+			
+        }else if(pass1==pass3) {
+        	answer= new int[2];
+        	answer[0] = 1;
+			answer[1] = 3;
+        }else if(pass2==pass3) {
+        	answer= new int[2];
+        	answer[0] = 2;
+			answer[1] = 3;
         }
         
-        
-        
-		return answer;
+       return answer;
     }
 }
